@@ -11,7 +11,7 @@ phases:
     commands:
       - npm install -g @angular/cli@11.2.2
     runtime-versions:
-      nodejs: 14
+      nodejs: 18
   pre_build:
     commands:
       - npm install
@@ -25,7 +25,7 @@ phases:
       - echo build process finished, we should uplload to S3 now
       - cd dist/studi-store
       - ls -la
-      - aws s3 sync . s3://studi-store --delete
+      - aws s3 sync . s3://studi-store --delete --debug
 artifacts:
   files:
     - '**/*'
